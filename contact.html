@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="with=device=width, initial-scale=1.0">
+    <title>Ranju's Threading Salon</title>
+    <link rel="stylesheet" href="contactstyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+        <nav>
+            <a href="index.html"><img src="Images/Logo Transparent.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="service.html">SERVICES</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    <section class="header">
+        <div class="text-box">
+            <h1><span style="color: #fce6b7">CONTACT</span> US</h1>
+            <p>
+                Using the form below, submit any questions or concerns that you have. <br>
+                We will do our best to reach you within a timely manner.
+            </p>
+        </div>
+    </section>
+    <div class="formcarry-container">
+        <form action="form-process.php" method="POST" class="formcarry-form">
+          <label for="name">NAME</label>
+          <input type="text" id="name" name="fullName" required />
+  
+          <label for="email">EMAIL ADDRESS</label>
+          <input type="email" id="email" name="email" required />
+  
+          <label for="message">MESSAGE</label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+  
+          <button type="submit">SEND</button>
+        </form>
+      </div>
+    </section>
+    <section class="footer">
+        <p>
+            PHONE: +1 (718) 357-4304 <br>
+            ADDRESS: 150-55 B 14th Ave, Whitestone, <br> NY 11357
+        </p>
+        <div class="icons">
+            <a href="https://www.yelp.com/biz/ranju-threading-whitestone-2" target="_blank"><i class="fa fa-yelp"></i></a>
+        </div>
+    </section>
+    <script>
+        var navLinks = document.getElementById("navLinks")
+        function showMenu() {
+    navLinks.style.display = "block";
+
+    setTimeout(function() {
+        navLinks.style.right = "0";
+    }, 1); 
+}
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+            setTimeout(function() {
+        navLinks.style.display = "none";
+    }, 1000); 
+        }
+        window.onscroll = function() {
+            var screenWidth = window.innerWidth;
+            if (screenWidth < 701) {
+                hideMenu();
+            }
+            };
+    </script>
+</body>
+</html>
